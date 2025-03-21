@@ -1,10 +1,10 @@
 #######################################################################################################################################################
 # 
-# Name:
-# SID:
-# Exam Date:
-# Module:
-# Github link for this assignment:  
+# Name: Proawsaeng Katcharoen
+# SID: 740094448
+# Exam Date: 28 March 2025
+# Module: BEMM458
+# Github link for this assignment: https://github.com/UniversityExeterBusinessSchool/mock-test-2-proawsaeng-katc.git
 #
 #######################################################################################################################################################
 # Instruction 1. Read each question carefully and complete the scripts as instructed.
