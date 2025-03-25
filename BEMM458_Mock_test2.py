@@ -32,7 +32,7 @@ for i in weekly_sales:
     avg_sales = avg_sales + i
 
 avg_sales = avg_sales/len(weekly_sales)
-print(avg_sales)
+print(avg_sales) #104.28571428571429
 
 # for loop to find which week's sales were above or below the average
 
@@ -42,6 +42,14 @@ for j in range(len(weekly_sales)):
         print("Week: ", j, " is below average")
     else:
         print("Week: ", j, " is above average")
+
+#Week:  0  is above average
+#Week:  1  is below average
+#Week:  2  is below average
+#Week:  3  is below average
+#Week:  4  is above average
+#Week:  5  is below average
+#Week:  6  is above average
 
 
 #######################################################################################################################################################
@@ -53,6 +61,23 @@ customer_feedback = """The product was good but could be improved. I especially 
 # Find the first and last occurrence of the words 'good' and 'improved' in the feedback using string methods.
 # Store each position in a list as a tuple (start, end) for both words and print the list.
 
+
+# define the target words
+my_list = ['good', 'improved']
+
+#for storing start and end location
+my_coordinates = []
+
+for i in my_list:
+    start_loc = customer_feedback.find(i)
+    wordlen = len(i)
+    end_loc = start_loc + wordlen
+
+    my_coordinates.append((start_loc,end_loc))
+
+print(my_coordinates) #[(16, 20), (34, 42)]
+
+
 #######################################################################################################################################################
 
 # Question 3 - Functions for Business Metrics
@@ -62,6 +87,26 @@ customer_feedback = """The product was good but could be improved. I especially 
 # 2. Customer Acquisition Cost (CAC): Calculate as (Total Marketing Cost / New Customers Acquired).
 # 3. Net Promoter Score (NPS): Calculate as (Promoters - Detractors) / Total Respondents * 100.
 # 4. Return on Investment (ROI): Calculate as (Net Gain from Investment / Investment Cost) * 100.
+
+def NetProfitMargin(netprofit, revenue):
+    return (netprofit/revenue) * 100
+
+
+def Cac(totalmarketingcost, newcustomers):
+    return (totalmarketingcost/newcustomers)
+
+
+def Nps(promoters, detractors, totalrespon):
+    return((promoters-detractors)/totalrespon*100)
+
+def Roi(netgain, investcost):
+    return((netgain/investcost)*100)
+
+# test function (StudendID: 740094448)
+print(NetProfitMargin(7400, 94448))
+print(Cac(74009,448))
+print(Nps(74,94,400))
+print(Roi(74009,4448))
 
 #######################################################################################################################################################
 
