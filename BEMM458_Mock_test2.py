@@ -3,7 +3,7 @@
 # Name: Proawsaeng Katcharoen
 # SID: 740094448
 # Exam Date: 28 March 2025
-# Module: BEMM458
+# Module: BEMM458 Programming for Business Analytics
 # Github link for this assignment: https://github.com/UniversityExeterBusinessSchool/mock-test-2-proawsaeng-katc.git
 #
 #######################################################################################################################################################
@@ -24,6 +24,25 @@ weekly_sales = [120, 85, 100, 90, 110, 95, 130]
 
 # Write a for loop that iterates through the list and prints whether each week's sales were above or below the average sales for the period.
 # Calculate and print the average sales.
+
+# Find average sales
+i=0
+avg_sales=0
+for i in weekly_sales:
+    avg_sales = avg_sales + i
+
+avg_sales = avg_sales/len(weekly_sales)
+print(avg_sales)
+
+# for loop to find which week's sales were above or below the average
+
+j = 0
+for j in range(len(weekly_sales)):
+    if  weekly_sales[j] < avg_sales:
+        print("Week: ", j, " is below average")
+    else:
+        print("Week: ", j, " is above average")
+
 
 #######################################################################################################################################################
 
