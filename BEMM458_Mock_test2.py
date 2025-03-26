@@ -117,6 +117,25 @@ import pandas as pd
 
 sales_data = {'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'], 'Sales': [200, 220, 210, 240, 250]}
 
+#create and display dataframe
+df = pd.DataFrame(sales_data)
+print(df)
+
+#cumulative monthly sales
+cumulative_sales = []
+total = 0
+
+for i in range(len(df['Sales'])):
+    total += df['Sales'][i]
+    cumulative_sales.append(total)
+
+#cumulative sales
+print(cumulative_sales) #[200, 420, 630, 870, 1120]
+
+#add new column to df for cumulative sales
+df['Cumulative Sales'] = cumulative_sales
+print(df)
+
 #######################################################################################################################################################
 
 # Question 5 - Linear Regression for Forecasting
@@ -125,6 +144,39 @@ sales_data = {'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May'], 'Sales': [200, 220, 
 
 # Price (£): 15, 18, 20, 22, 25, 27, 30
 # Demand (Units): 200, 180, 170, 160, 150, 140, 130
+
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+#make dataframe to store data
+data = pd.DataFrame({"Price":[15, 18, 20, 22, 25, 27, 30], "Demand":[200, 180, 170, 160, 150, 140, 130]})
+
+#values for plot
+x = data['Price']
+y = data['Demand']
+
+model = sm.OLS(y,sm.add_constant(x))
+result = model.fit()
+
+x_pre = sm.add_constant(x)
+y_pre = result.predict(x_pre)
+
+#values for prediction
+newprice = pd.DataFrame({"Price":[26]})
+newprice_cons = sm.add_constant(newprice, has_constant='add')
+predictdemand = result.predict(newprice_cons)
+
+plt.scatter(x, y, color='blue', label='Actual Data')
+plt.plot(x, y_pre, color='red', label='Regression Line')
+plt.scatter(26, predictdemand.iloc[0], color='green', label='Predicted at £26')
+
+plt.xlabel('Price (£)')
+plt.ylabel('Demand (Units)')
+plt.title('Linear Regression: Price vs Demand')
+plt.legend()
+plt.grid(True)
+plt.show()
+
 
 #######################################################################################################################################################
 
@@ -142,7 +194,6 @@ prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 # Plot a histogram to visualize the distribution of these numbers.
 # Add appropriate labels for the x-axis and y-axis, and include a title for the histogram.
 
-import matplotlib.pyplot as plt
 import random
 
 #######################################################################################################################################################
