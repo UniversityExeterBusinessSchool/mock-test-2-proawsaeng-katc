@@ -209,6 +209,16 @@ print(TotalPrice(prices))
 
 import random
 
+numbers = [random.randint(1,500) for i in range(50)]
+
+#print(len(numbers))
+
+plt.hist(numbers)
+plt.xlabel('Values')
+plt.ylabel('Frequency')
+plt.title('Distribution of 50 random numbers')
+plt.show()
+
 #######################################################################################################################################################
 
 # Question 8 - List Comprehensions
