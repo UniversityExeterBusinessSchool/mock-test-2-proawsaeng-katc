@@ -228,11 +228,24 @@ quantities = [5, 12, 9, 15, 7, 10]
 # Use a list comprehension to create a new list that doubles each quantity that is 10 or more.
 # Print the original and the new lists.
 
+#list comprehension
+
+new_list = [i*2 if i>=10 else i for i in quantities]
+print(new_list)
+
 #######################################################################################################################################################
 
 # Question 9 - Dictionary Manipulation
 # Using the dictionary below, filter out the products with a rating of less than 4 and create a new dictionary with the remaining products.
 ratings = {'product_A': 4, 'product_B': 5, 'product_C': 3, 'product_D': 2, 'product_E': 5}
+
+good_rating = {}
+
+for key, value in ratings.items():
+    if value >= 4:
+        good_rating[key] = value
+
+print(good_rating)
 
 #######################################################################################################################################################
 
