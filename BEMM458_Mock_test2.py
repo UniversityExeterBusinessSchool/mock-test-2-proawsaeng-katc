@@ -261,4 +261,14 @@ print("The average is" + average)
 # Identify and correct the errors in the code.
 # Comment on each error and explain your fixes.
 
+# the error is in the last line because string can't + with int/float(average)
+# to fix it I will change the syntax from + to comma
+
+values = [10, 20, 30, 40, 50]
+total = 0
+for i in values:
+    total = total + i
+average = total / len(values)
+print("The average is", average)
+
 #######################################################################################################################################################
