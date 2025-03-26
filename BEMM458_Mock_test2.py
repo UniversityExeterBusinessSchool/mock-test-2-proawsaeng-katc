@@ -187,6 +187,19 @@ prices = {'A': 50, 'B': 75, 'C': 'unknown', 'D': 30}
 # Write a function to calculate the total price of all items, handling any non-numeric values by skipping them.
 # Include error handling in your function and explain where and why it’s needed.
 
+#function for calculating total price
+
+def TotalPrice(price):
+    total = 0
+    for key, value in prices.items():
+        if type(value) not in (int, float): #Error Handling is here to skip other datatype that's not numeric
+            continue
+        total += value
+    
+    return total
+
+print(TotalPrice(prices))
+
 #######################################################################################################################################################
 
 # Question 7 - Plotting and Visualization
